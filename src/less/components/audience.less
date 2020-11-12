@@ -1,0 +1,160 @@
+.audience-block {
+
+    background-color: @color-secondary-background;
+    padding: @padding-blocks 0;
+    
+    .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+
+        .block-description {
+            color: lighten(@color-light-gray, 30%);
+            text-align: center;
+            margin: 0;
+            margin-top: 90px;
+            position: relative;
+
+            &::before {
+                display: block;
+                content: '';
+                background-image: url('./../img/quotes-icon.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 45px;
+                height: 30px;
+                position: absolute;
+                bottom: calc(100% + 45px);
+                right: calc(50% - 45px / 2);
+            }
+        }
+    }
+    
+    .wrapper {
+
+        max-width: 365px; 
+        
+        .item {
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .name {
+            text-transform: uppercase;
+            color: @color-primary;
+            font-weight: 600;
+            text-align: center;
+            margin: 0;
+            margin-top: 40px;
+            
+        }
+
+        .description {
+            color: lighten(@color-light-gray, 30%);
+            text-align: center;
+            margin: 0;
+            margin-top: 15px;
+        }
+
+        .photo {
+            width: 140px;
+            height: 140px;
+            overflow: hidden;
+            border-radius: 100px;
+            margin-top: 30px;
+            border: @color-primary solid 4px;
+            box-shadow: 0 0 2px 10px fade(@color-primary, 40%);
+
+
+            &.slick-slide {
+                width: @width-slick-nav-item;
+                height: @height-slick-nav-item;
+                margin: 0 @gap-slick-nav-item;
+                border: @color-primary solid 1px;
+                box-shadow: 0 0 1px 4px fade(@color-primary, 40%);
+            }
+        }
+    }
+
+    .slider-audience-nav {
+        max-width: calc((@width-slick-nav-item + @gap-slick-nav-item * 2) * 4 - 30px);
+
+            .slick-arrow {
+                background: transparent;
+                width: 30px;
+                height: 30px;
+                transition: background 0.2s ease-in-out;
+                border: lighten(@color-light-gray, 30%) 1px solid;
+        
+                &.slick-prev {
+
+                    left: -45px;
+        
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        border: 2px solid lighten(@color-light-gray, 30%);
+                        border-width: 2px 2px 0 0;
+                        transform: rotate(225deg);
+                        position: absolute;
+                        top:  calc(50% - 10px / 2);
+                        left: calc(50% - 10px / 2);
+                    }
+                }
+        
+                &.slick-next {
+
+                    right: -45px;
+        
+                    &::before {
+                        content: '';
+                        display: block;
+                        width: 10px;
+                        height: 10px;
+                        border: 2px solid lighten(@color-light-gray, 30%);
+                        border-width: 2px 2px 0 0;
+                        transform: rotate(45deg);
+                        position: absolute;
+                        top:  calc(50% - 10px / 2);
+                        left: calc(50% - 10px / 2);
+
+                    }
+                }
+        
+                &:hover {
+                    background: @color-primary;
+                    border-color: @color-primary;
+                }
+            }
+
+            .slick-list {
+                padding: 20px 5px;
+            }
+    }
+}
+
+@media (max-width: @screen-s) {
+    .audience-block {
+        padding: @padding-blocks-mobile 0;
+    }
+
+}
+
+@media (max-width: @screen-xs) {
+    .audience-block {
+        > .inner > .wrapper {
+            max-width: 100%;
+        }
+        
+        .slider-audience-nav {
+            max-width: 100%;
+        }
+
+    }
+}

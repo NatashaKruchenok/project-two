@@ -1,0 +1,205 @@
+.main-header {
+
+    background-color: fade(@color-dark-gray, 80%) ;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+    min-height: @height-main-header;
+    transition: all 0.3s ease-out;
+
+     .inner {
+
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo-block {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo-img {
+        width: 195px;
+        height: 67px;
+        transition: all 0.3s ease-out;
+    }
+
+    .main-nav {
+
+        display: flex;
+        align-items: center;
+
+        .list {
+            margin-left: 20px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+        }
+
+        .item {
+            display: flex;
+
+            a {
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: #fff;
+                font-size: 13px;
+                font-weight: 600;
+                text-transform: uppercase;
+                padding: 0 10px;
+                border-bottom: transparent solid 2px;
+
+                &:hover {
+                    color: @color-primary;
+                    border-color: @color-primary;
+                    transition: all 0.5s ease-out, color 0.2s ease-out;
+                    cursor: pointer;
+                }
+            }
+    
+            &:active a {
+                color: lighten(@color-primary, 40%);
+            }
+
+        }
+
+        .toggle {
+            display: none;
+            border: 0;
+            background: transparent;
+        }
+
+        .toggle i {
+            font-size: 28px;
+            color: #fff;
+        }
+
+        .nav-close {
+            position: absolute;
+            top: 0;
+            right: -35px;
+            width: 30px;
+            height: 30px;
+            font-size: 0;
+            background-color: transparent;
+            border: 0;
+            cursor: pointer;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 5px;
+                top: 20px;
+                left: 2px;
+                background-color: #fff;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+            
+    }
+
+}
+
+.header-scroll {
+    min-height: 80px;
+
+    .logo-img {
+        width: 145px;
+        height: 50px;
+    }
+}
+
+@media (max-width: @screen-m) {
+
+    .main-header{
+        .main-nav { 
+            .list {
+                justify-content: start;
+            }
+            .item a {
+                padding: 5px 5px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-s) {
+
+    .main-header{
+        min-height: 80px;
+
+        .main-nav { 
+
+            .toggle {
+                display: block;
+            }
+            .list {
+                display: none;
+                position: fixed;
+                top: 0;
+                right: 0;
+                border: 0;
+                left: 0;
+                background: @color-dark-gray;
+                z-index: 10;
+                width: 70vw;
+                height: 100%;
+                margin: 0;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                
+
+                &.--active {
+                    display: flex;
+
+                    .item a {
+                        padding: 10px;
+                        font-size: 20px;
+                    }
+    
+                    .item a:active,
+                    .item a:hover {
+                        border-color: transparent;
+                        background: transparent;
+                        color: @color-primary;
+    
+                    }
+                }
+
+                &::after {
+                    display: block;
+                    content: '';
+                    position: fixed;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    z-index: -1;
+                    background: rgba(0, 0, 0, .5);
+                }
+            }
+        }
+
+        .logo-img {
+            width: 145px;
+            height: 50px;
+        }   
+    }
+}
+

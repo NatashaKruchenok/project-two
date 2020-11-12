@@ -1,0 +1,70 @@
+.sale-block {
+    padding: @padding-blocks 0;
+    background-color: @color-dark-gray;
+
+    .inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .sale-title {
+        font-size: 40px;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: @color-primary;
+        text-align: center;
+        line-height: 1;
+        margin: 0 0 30px;
+
+    }
+
+    .sale-description {
+        text-align: center;
+        font-size: 16px;
+        color: #fff;
+        line-height: 1;
+        margin: 0 0 70px;
+    }
+}
+
+@media (max-width: @screen-m) {
+
+    .sale-block {
+
+        .sale-title {
+            font-size: 30px;
+            margin: 0 0 20px;
+        }
+
+        .sale-description {
+            font-size: 13px;
+            margin: 0 0 50px;
+        }
+    }
+}
+
+@media (max-width: @screen-s) {
+
+    .sale-block {
+
+        .button {
+            font-size: 10px;
+            height: 50px;
+            padding: 0 20px;
+        }
+    }
+}
+
+@media (max-width: @screen-xs) {
+
+    .sale-block {
+        padding: @padding-blocks-mobile 0;
+
+        .sale-title {
+            font-size: 26px;
+            margin: 0 0 20px;
+        }
+    }
+}

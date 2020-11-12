@@ -1,0 +1,122 @@
+.services {
+    padding: @padding-blocks 0;
+}
+
+.tabs-block {
+
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 25px;
+
+        .list {
+
+            width: 100%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .toggle {
+            width: 100%;
+            position: relative;
+
+            &.ui-state-active {
+
+
+                &::after {
+                    display: block;
+                    transition: 0.3s;
+                }
+
+                a {
+                    color: #fff;
+                    background-color: @color-primary;
+                    transition: 0.3s;
+
+                    &:hover {
+                        color:#fff;
+                    }
+                }
+            }
+
+            a {
+                display: block;
+                color: @color-dark-gray;
+                font-size: 16px;
+                text-decoration: none;
+                padding: 25px 20px;
+                background-color: @color-background-light;
+                border: 1px solid @color-border;
+                outline: none;
+                line-height: 1;
+                text-align: center;
+
+                &:hover {
+                    color: @color-primary;
+                }
+            }
+
+            &::after {
+                display: none;
+                content: '';
+                border: 10px solid transparent; 
+                border-top: 10px solid @color-primary;
+                position: absolute;
+                top: calc(100% - 1px);
+                left: calc(50% - 10px / 2);
+            }
+        }
+ 
+    }
+
+    .item {
+        display: flex;
+        justify-content: space-between;
+
+            img {
+                max-width: 190px;
+                margin-right: 25px;
+            }
+    }
+}
+
+
+@media (max-width: @screen-m) {
+
+    .tabs-block {
+        display: flex;
+        align-items: flex-start;
+
+        .list {
+            flex-direction: column;
+        }
+
+        .item {
+            flex-direction: column;
+        }
+
+        .header {
+            margin: 0 25px 0 0;
+
+            .toggle.ui-state-active::after {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-s) {
+    .services {
+        padding: @padding-blocks-mobile 0;
+    
+    }
+
+    .tabs-block {
+       .header .toggle > a {
+            padding: 20px 10px;
+            width: 120px;
+        }
+    }
+}

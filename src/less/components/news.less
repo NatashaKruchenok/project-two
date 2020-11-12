@@ -1,0 +1,135 @@
+.news-block {
+
+    padding: @padding-blocks 0;
+
+   .container > .inner {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    }
+
+}
+
+.news-card {
+    
+    margin-top: 30px;
+
+    .inner {
+        margin-right: 2px;
+        border: #ececec 1px solid;
+        max-width: calc(@width-blog-card - 2px / 2);
+        width: 100%;
+        min-height: @height-blog-card;
+    }
+
+    .img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        height: @height-blog-card-img;
+        position: relative;
+        background-color: #ececec;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .date {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: @color-secondary;
+            padding: 15px 20px;
+            display: flex;
+            flex-direction: column;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+        }
+    }
+
+    .details {
+
+        padding: 15px 20px;
+
+        .title {
+            font-size: 18px;
+            font-weight: 600;
+            color: @color-dark-gray;
+
+            &:hover {
+
+                color: @color-primary;
+                transition: all 0.5s ease-out, color 0.2s ease-out;
+                cursor: pointer;
+            }
+
+            &:active {
+                color: lighten(@color-primary, 40%);
+            }
+        }
+
+        .info {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: @color-light-gray;
+
+            .author {
+                padding-right: 20px;
+                width: 50%;
+                border-right: 1px solid @color-light-gray;
+            }
+
+            .comments {
+                padding-left: 20px;
+                width: 50%;
+            }
+
+        }
+    }
+
+    &:hover {
+
+        .date {
+            transition: all 0.5s ease-out, color 0.2s ease-out;
+            background-color: @color-primary;
+        }
+    }
+
+}
+
+@media (max-width: @screen-m) {
+
+    .news-card {
+        width: 48%;
+    }
+
+}
+
+@media (max-width: @screen-s) {
+    .news-block{
+        padding: @padding-blocks-mobile 0;
+    }
+
+}
+
+@media (max-width: @screen-xs) {
+
+    .news-card {
+        width: 100%;
+        
+        .inner {
+        max-width: 100%;
+
+        }
+    }
+
+}

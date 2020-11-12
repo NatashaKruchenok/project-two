@@ -1,0 +1,35 @@
+.button {
+    & {
+        font: 600 13px 'Montserrat', sans-serif;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 65px;
+        padding: 0 30px;
+        border: none ;
+        border-radius: 5px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        background-color: @color-primary;
+        cursor: pointer;
+        box-shadow: none;
+        transition: background 0.3s ease-in-out;
+        box-sizing: border-box;
+    }
+
+
+    &:not([disabled]) {
+        &:hover {
+            background: @color-primary-action;
+        }
+
+        &:active {
+            background: darken(@color-primary-action, 10%);
+        }
+
+        &:focus {
+            background: lighten(@color-primary-action, 10%);
+        }
+    }
+}

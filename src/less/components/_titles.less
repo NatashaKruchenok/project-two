@@ -1,0 +1,48 @@
+.title-secondary {
+
+    position: relative;
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+    color: @color-dark-gray;
+    margin: 0 0 60px;
+
+    &::after {
+        display: block;
+        margin: 0 auto;
+        margin-top: 20px;
+        content:'';
+        background-image: url(./../img/title-decoration.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 80px;
+        height: 10px;
+    }
+
+    &.-light {
+        color: #fff;
+    }
+
+    &.-form-title {
+        text-align: start;
+        margin: 0 0 80px;
+
+        &::after {
+            margin: 20px 0 0;
+        }
+    }
+}
+
+@media (max-width: @screen-m) {
+
+    .title-secondary {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: @screen-xs) {
+
+    .title-secondary {
+        font-size: 24px;
+    }
+}

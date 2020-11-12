@@ -1,0 +1,96 @@
+.features {
+
+    padding: @padding-blocks 0;
+
+    .list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        
+    }
+
+    .title-secondary {
+        margin-bottom: 0;
+    }
+
+    .item {
+        max-width: calc(@width-feature - 2px / 2);
+        margin-top: 70px;
+        margin-right: 2px;
+
+        .title {
+            position: relative;
+            font-size: 18px;
+            font-weight: 600;
+            color: @color-dark-gray;
+            margin: 0 0 25px 40px;
+
+            &:hover {
+                color: @color-primary;
+                transition: all 0.5s ease-out, color 0.2s ease-out;
+            }
+
+            &::before {
+                display: inline-flex;
+                position: absolute;
+                content: '';
+
+                background-position: center;
+                background-repeat: no-repeat;
+                width: 30px;
+                height: 30px;
+                top: calc(50% - 30px / 2);
+                right: calc(100% + 30px / 2); 
+            }
+
+
+            &.-retina::before {
+                background-image: url('./../img/retina-feature.svg');
+            }
+
+            &.-blog::before {
+                background-image: url('./../img/blog-feature.svg');
+            }
+
+            &.-parallax::before {
+                background-image: url('./../img/parallax-feature.svg');
+            }
+
+            &.-interface::before {
+                background-image: url('./../img/interface-feature.svg');
+            }
+
+            &.-fonts::before {
+                background-image: url('./../img/fonts-feature.svg');
+            }
+
+            &.-seo::before {
+                background-image: url('./../img/seo-feature.svg');
+            }
+        }
+
+        .description {
+            font-size: 14px;
+            font-weight: 300;
+            color: @color-light-gray;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: @screen-s) {
+    .features {
+        padding: @padding-blocks-mobile 0;
+    }
+
+}
+
+@media (max-width: @screen-m) {
+    .features {
+        .list {
+            justify-content: center;
+        }
+    }
+}
+
