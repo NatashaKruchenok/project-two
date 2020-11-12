@@ -74,9 +74,16 @@
     .item {
         display: flex;
         justify-content: space-between;
-            img {
+        min-height: 150px;
+
+            .img {
                 max-width: 190px;
+                height: auto;
                 margin-right: 25px;
+                
+                img {
+                    width: 190px;
+                }
             }
     }
 }
@@ -94,6 +101,8 @@
 
         .item {
             flex-direction: column;
+            justify-content: start;
+            min-height: 520px;
         }
 
         .header {

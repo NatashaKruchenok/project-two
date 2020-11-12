@@ -1046,10 +1046,15 @@ img {
 .tabs-block .item {
   display: flex;
   justify-content: space-between;
+  min-height: 150px;
 }
-.tabs-block .item img {
+.tabs-block .item .img {
   max-width: 190px;
+  height: auto;
   margin-right: 25px;
+}
+.tabs-block .item .img img {
+  width: 190px;
 }
 @media (max-width: 1024px) {
   .tabs-block {
@@ -1061,6 +1066,8 @@ img {
   }
   .tabs-block .item {
     flex-direction: column;
+    justify-content: start;
+    min-height: 520px;
   }
   .tabs-block .header {
     margin: 0 25px 0 0;
